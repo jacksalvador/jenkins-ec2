@@ -7,15 +7,23 @@ resource "aws_security_group" "sg_yang_jenkins" {
     description = "SSH Access from My IP"
     from_port   = 22
     to_port     = 22
-    protocol    = "ssh"
+    protocol    = "tcp"
     cidr_blocks = ["220.85.94.0/24"]
   }
 
   ingress {
     description = "Jenkins Access from My IP"
-    from_port   = 22
-    to_port     = 22
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
+    cidr_blocks = ["220.85.94.0/24"]
+  }
+
+  ingress {
+    description = "Jenkins Access from My IP"
+    from_port   = "-1"
+    to_port     = "-1"
+    protocol    = "icmp"
     cidr_blocks = ["220.85.94.0/24"]
   }
 
@@ -27,6 +35,6 @@ resource "aws_security_group" "sg_yang_jenkins" {
   }
 
   tags = {
-    Name = "allow_ssh_8080"
+    Name = "SG-YANG-JENKINS"
   }
 }
