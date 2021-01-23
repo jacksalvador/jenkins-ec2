@@ -33,7 +33,7 @@ resource "aws_subnet" "sbn_yang_private1" {
   availability_zone = "ap-northeast-2a"
 
   tags = {
-    Name = "SBN-YANG-PRIVATE2"
+    Name = "SBN-YANG-PRIVATE1"
   }
 }
 
@@ -78,10 +78,10 @@ resource "aws_route_table_association" "sbn_associations_yang_public2" {
   route_table_id = aws_route_table.rt_yang_public.id
 }
 
-# resource "aws_route_table_association" "sbn_associations_yang_private1" {
-#   subnet_id      = aws_subnet.sbn_yang_private1.id
-#   route_table_id = aws_route_table.rt_yang_private.id
-# }
+resource "aws_route_table_association" "sbn_associations_yang_private1" {
+  subnet_id      = aws_subnet.sbn_yang_private1.id
+  route_table_id = aws_route_table.rt_yang_public.id
+}
 
 # resource "aws_route_table_association" "sbn_associations_yang_private2" {
 #   subnet_id      = aws_subnet.sbn_yang_private2.id
