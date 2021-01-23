@@ -26,7 +26,7 @@ resource "aws_instance" "ec2_yang_private" {
   ami           = "ami-0e67aff698cb24c1d" # ap-northeast-2 Ubuntu 18.04
   instance_type = "t2.micro"
 
-  vpc_security_group_ids = [ aws_security_group.sg_yang_jenkins.id ]
+  vpc_security_group_ids = [ aws_security_group.sg_yang_web.id ]
   
   tags          = {
     Name        = "EC2-YANG-WEB"

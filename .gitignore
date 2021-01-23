@@ -1,3 +1,4 @@
 backend.tf
 temp
 **/.terraform/*
+.terraform
