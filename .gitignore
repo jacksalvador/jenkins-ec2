@@ -1,4 +1,5 @@
 backend.tf
+*.hcl
 temp
 
 # Local .terraform directories
