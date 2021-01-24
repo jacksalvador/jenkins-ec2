@@ -1,4 +1,12 @@
 backend.tf
 temp
+
+# Local .terraform directories
 **/.terraform/*
-.terraform
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
