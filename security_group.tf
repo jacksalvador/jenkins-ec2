@@ -8,7 +8,7 @@ resource "aws_security_group" "sg_yang_jenkins" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["59.9.142.0/24"]
+    cidr_blocks = ["59.9.142.0/24", "59.15.102.0/24"]
   }
 
   ingress {
@@ -16,7 +16,7 @@ resource "aws_security_group" "sg_yang_jenkins" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["59.9.142.0/24"]
+    cidr_blocks = ["59.9.142.0/24", "59.15.102.0/24"]
   }
 
   ingress {
@@ -24,7 +24,7 @@ resource "aws_security_group" "sg_yang_jenkins" {
     from_port   = "-1"
     to_port     = "-1"
     protocol    = "icmp"
-    cidr_blocks = ["59.9.142.0/24"]
+    cidr_blocks = ["59.9.142.0/24", "59.15.102.0/24"]
   }
 
   egress {

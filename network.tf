@@ -1,6 +1,7 @@
 resource "aws_vpc" "vpc_yang" {
   cidr_block       = "10.0.1.0/24"
   instance_tenancy = "default"
+  enable_dns_hostnames = true
 
   tags = {
     Name = "VPC-YANG"
